@@ -1,0 +1,180 @@
+---
+import Layout from "../layouts/Layout.astro";
+import FestivalHero from "../assets/img/Lazy-birds.avif";
+---
+
+<Layout>
+    <main class="bg-neutral-50 text-neutral-900">
+        <section class="relative h-[70vh] min-h-[500px] overflow-hidden">
+            <div class="absolute inset-0">
+                <img
+                    src={FestivalHero.src}
+                    alt="Festival"
+                    class="h-full w-full object-cover"
+                />
+            </div>
+
+            <div class="absolute inset-0 bg-black/40"></div>
+
+            <div
+                class="relative z-10 flex h-full flex-col items-center justify-center text-center px-6"
+            >
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                    Le Festival
+                </h1>
+
+                <p class="max-w-xl text-white/90 text-lg">
+                    Un festival gratuit, écoresponsable et convivial qui fait
+                    vibrer Montbéliard depuis 2018
+                </p>
+            </div>
+        </section>
+
+        <section class="max-w-5xl mx-auto px-6 py-16">
+            <h2 class="text-3xl font-bold mb-6">Notre histoire</h2>
+
+            <p class="text-gray-600 mb-6">
+                Né en 2018 de la passion d'un collectif de musiciens et
+                d'amoureux de la culture, La Fanfa'Comtoise est devenu un
+                rendez-vous incontournable pour les amateurs de jazz, de
+                musiques de rue et de fanfares dans la région de Montbéliard.
+            </p>
+
+            <p class="text-gray-600">
+                L'idée était simple : créer un festival accessible à tous,
+                gratuit, qui célèbre la richesse musicale de notre région tout
+                en respectant nos valeurs écologiques. Chaque année, nous
+                accueillons des milliers de festivaliers dans le centre
+                historique de Montbéliard.
+            </p>
+        </section>
+
+        <section class="bg-white py-14">
+            <div
+                class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 px-6"
+            >
+                <div class="bg-neutral-100 rounded-xl p-6 text-center">
+                    <p class="text-3xl font-bold text-orange-500">7e</p>
+                    <p class="text-sm text-gray-600">Édition en 2025</p>
+                </div>
+
+                <div class="bg-neutral-100 rounded-xl p-6 text-center">
+                    <p class="text-3xl font-bold text-orange-500">10k+</p>
+                    <p class="text-sm text-gray-600">Festivaliers en 2024</p>
+                </div>
+
+                <div class="bg-neutral-100 rounded-xl p-6 text-center">
+                    <p class="text-3xl font-bold text-orange-500">30+</p>
+                    <p class="text-sm text-gray-600">Artistes depuis 2018</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-5xl mx-auto px-6 py-16">
+            <h2 class="text-3xl font-bold mb-6">L'équipe</h2>
+
+            <p class="text-gray-600 mb-10">
+                La Fanfa'Comtoise, c'est avant tout une équipe de bénévoles
+                passionnés qui œuvre toute l'année pour vous offrir un festival
+                unique et de qualité.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-neutral-100 rounded-xl p-6">
+                    <h3 class="font-semibold mb-4">Équipe organisatrice</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>Direction artistique</li>
+                        <li>Communication & marketing</li>
+                        <li>Logistique & production</li>
+                        <li>Coordination bénévoles</li>
+                        <li>Relations partenaires</li>
+                    </ul>
+                </div>
+
+                <div class="bg-neutral-100 rounded-xl p-6">
+                    <h3 class="font-semibold mb-4">Équipes techniques</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>Régie son & lumière</li>
+                        <li>Montage & démontage</li>
+                        <li>Accueil artistes</li>
+                        <li>Sécurité & premiers secours</li>
+                        <li>Restauration & bars</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-orange-400 text-white py-14 text-center px-6">
+            <h2 class="text-2xl font-bold mb-3">Rejoignez-nous !</h2>
+
+            <p class="max-w-xl mx-auto mb-6">
+                Chaque année, nous recherchons des bénévoles motivés pour nous
+                aider durant le festival. Une belle occasion de vivre
+                l'événement de l'intérieur.
+            </p>
+
+            <a class="bg-white text-black px-8 py-3 rounded-full font-semibold">
+                Devenir bénévole
+            </a>
+        </section>
+
+        <section class="py-16 px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Nos valeurs</h2>
+
+            <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h3 class="font-semibold mb-2 text-orange-500">
+                        Écoresponsabilité
+                    </h3>
+                    <p class="text-gray-600">
+                        Réduction des déchets, gobelets réutilisables,
+                        restauration locale et tri sélectif renforcé.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h3 class="font-semibold mb-2 text-orange-500">
+                        Accessibilité
+                    </h3>
+                    <p class="text-gray-600">
+                        Un festival gratuit et ouvert à tous avec des espaces
+                        accessibles et une programmation variée.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h3 class="font-semibold mb-2 text-orange-500">
+                        Soutien aux artistes locaux
+                    </h3>
+                    <p class="text-gray-600">
+                        Promotion des talents régionaux de jazz, musiques de rue
+                        et fanfares.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h3 class="font-semibold mb-2 text-orange-500">
+                        Convivialité
+                    </h3>
+                    <p class="text-gray-600">
+                        Créer un moment de partage dans une ambiance chaleureuse
+                        et familiale.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-neutral-100 py-16 px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">
+                Édition 2025 : "Retour aux sources"
+            </h2>
+
+            <p class="max-w-3xl mx-auto text-gray-600">
+                Pour cette 7e édition, nous mettons à l'honneur les racines
+                musicales de notre région. Jazz traditionnel, fanfares comtoises
+                et musiques de rue se mêleront pour célébrer l'authenticité et
+                la transmission.
+            </p>
+        </section>
+    </main>
+</Layout>

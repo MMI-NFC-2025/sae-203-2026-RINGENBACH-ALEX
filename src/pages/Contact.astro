@@ -1,0 +1,180 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Facebook from "../assets/icons/facebook.svg";
+import Instagram from "../assets/icons/instagram.svg";
+import { INVALID } from "astro:schema";
+---
+
+<Layout>
+    <main class="bg-[#f6f4ef] text-neutral-900">
+        <section class="bg-[#d97706] text-white py-20 text-center px-6">
+            <h1 class="text-4xl font-bold mb-4">Contactez-nous</h1>
+            <p class="max-w-xl mx-auto text-lg text-white/90">
+                Une question, une suggestion ou envie de devenir partenaire ?
+                N'hésitez pas à nous écrire !
+            </p>
+        </section>
+
+        <section class="max-w-5xl mx-auto px-6 py-16">
+            <h2 class="text-3xl font-bold mb-10">Nos coordonnées</h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div
+                    class="bg-white p-6 rounded-xl shadow-sm border border-neutral-200"
+                >
+                    <h3 class="font-semibold mb-2 text-[#d97706]">Email</h3>
+                    <p class="text-neutral-600">contact@fanfacomtoise.fr</p>
+                </div>
+
+                <div
+                    class="bg-white p-6 rounded-xl shadow-sm border border-neutral-200"
+                >
+                    <h3 class="font-semibold mb-2 text-[#d97706]">Téléphone</h3>
+                    <p class="text-neutral-600">03 81 12 34 56</p>
+                    <p class="text-sm text-neutral-500 mt-2">
+                        Du lundi au vendredi, 9h-18h
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white p-6 rounded-xl shadow-sm border border-neutral-200"
+                >
+                    <h3 class="font-semibold mb-2 text-[#d97706]">Adresse</h3>
+                    <p class="text-neutral-600">
+                        Association La Fanfa'Comtoise
+                    </p>
+                    <p class="text-neutral-600">Place Saint-Martin</p>
+                    <p class="text-neutral-600">25200 Montbéliard</p>
+                    <p class="text-neutral-600">France</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-5xl mx-auto px-6 pb-16">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-[#c6d68b] p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-3 text-neutral-900">
+                        Suivez-nous
+                    </h3>
+
+                    <p class="mb-4 text-neutral-800">
+                        Restez informés de toute l'actualité du festival, des
+                        annonces d'artistes et des bons plans !
+                    </p>
+
+                    <div class="flex gap-4">
+                        <a
+                            class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow"
+                        >
+                            <Facebook class="w-5 h-5" />
+                        </a>
+
+                        <a
+                            class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow"
+                        >
+                            <Instagram class="w-5 h-5" />
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-[#f4d08f] p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-3 text-neutral-900">
+                        Rejoignez l'équipe
+                    </h3>
+
+                    <p class="text-neutral-800">
+                        Vous souhaitez devenir bénévole pour le festival ?
+                        Contactez-nous en précisant "Bénévolat" dans le sujet de
+                        votre message.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-3xl mx-auto px-6 pb-20">
+            <h2 class="text-3xl font-bold mb-10 text-center">
+                Envoyez-nous un message
+            </h2>
+
+            <form
+                class="bg-white p-8 rounded-xl shadow-sm border border-neutral-200 space-y-6"
+            >
+                <div>
+                    <label class="block text-sm font-medium mb-2">
+                        Nom complet
+                    </label>
+                    <input
+                        type="text"
+                        placeholder="Votre nom"
+                        class="w-full border border-neutral-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#d97706]"
+                    />
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-2">
+                        Email
+                    </label>
+                    <input
+                        type="email"
+                        placeholder="votre@email.fr"
+                        class="w-full border border-neutral-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#d97706]"
+                    />
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-2">
+                        Sujet
+                    </label>
+                    <select
+                        class="w-full border border-neutral-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#d97706]"
+                    >
+                        <option>Sélectionnez un sujet</option>
+                        <option>Demande d'information</option>
+                        <option>Bénévolat</option>
+                        <option>Partenariat</option>
+                        <option>Presse / Média</option>
+                        <option>Proposition artistique</option>
+                        <option>Autre</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-2">
+                        Message
+                    </label>
+                    <textarea
+                        rows="5"
+                        placeholder="Votre message..."
+                        class="w-full border border-neutral-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#d97706]"
+                    ></textarea>
+                </div>
+
+                <button
+                    type="submit"
+                    class="w-full bg-[#d97706] text-white py-3 rounded-full font-semibold hover:bg-[#c76a05] transition"
+                >
+                    Envoyer le message
+                </button>
+
+                <p class="text-xs text-neutral-500 text-center">
+                    En envoyant ce formulaire, vous acceptez que vos données
+                    soient utilisées uniquement pour répondre à votre demande.
+                </p>
+            </form>
+        </section>
+
+        <section class="bg-[#ebe6da] py-16 px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6">Où nous trouver</h2>
+
+            <div
+                class="max-w-md mx-auto bg-white p-6 rounded-xl shadow-sm border border-neutral-200"
+            >
+                <p class="font-semibold mb-2">Centre-ville de Montbéliard</p>
+
+                <p class="text-neutral-600">
+                    Place Saint-Martin, 25200 Montbéliard
+                </p>
+            </div>
+        </section>
+    </main>
+</Layout>
