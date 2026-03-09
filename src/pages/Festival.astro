@@ -17,7 +17,7 @@ import FestivalHero from "../assets/img/Lazy-birds.avif";
             <div class="absolute inset-0 bg-black/40"></div>
 
             <div
-                class="relative z-10 flex h-full flex-col items-center justify-center text-center px-6"
+                class="relative z-10 flex h-full flex-col items-center justify-center text-center px-6 lg:max-w-4xl lg:mx-auto"
             >
                 <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
                     Le Festival
@@ -30,47 +30,50 @@ import FestivalHero from "../assets/img/Lazy-birds.avif";
             </div>
         </section>
 
-        <section class="max-w-5xl mx-auto px-6 py-16">
+        <section class="max-w-5xl mx-auto px-6 py-16 lg:max-w-6xl">
             <h2 class="text-3xl font-bold mb-6">Notre histoire</h2>
 
-            <p class="text-gray-600 mb-6">
-                Né en 2018 de la passion d'un collectif de musiciens et
-                d'amoureux de la culture, La Fanfa'Comtoise est devenu un
-                rendez-vous incontournable pour les amateurs de jazz, de
-                musiques de rue et de fanfares dans la région de Montbéliard.
-            </p>
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12">
+                <p class="text-gray-600 mb-6 lg:mb-0">
+                    Né en 2018 de la passion d'un collectif de musiciens et
+                    d'amoureux de la culture, La Fanfa'Comtoise est devenu un
+                    rendez-vous incontournable pour les amateurs de jazz, de
+                    musiques de rue et de fanfares dans la région de
+                    Montbéliard.
+                </p>
 
-            <p class="text-gray-600">
-                L'idée était simple : créer un festival accessible à tous,
-                gratuit, qui célèbre la richesse musicale de notre région tout
-                en respectant nos valeurs écologiques. Chaque année, nous
-                accueillons des milliers de festivaliers dans le centre
-                historique de Montbéliard.
-            </p>
+                <p class="text-gray-600">
+                    L'idée était simple : créer un festival accessible à tous,
+                    gratuit, qui célèbre la richesse musicale de notre région
+                    tout en respectant nos valeurs écologiques. Chaque année,
+                    nous accueillons des milliers de festivaliers dans le centre
+                    historique de Montbéliard.
+                </p>
+            </div>
         </section>
 
         <section class="bg-white py-14">
             <div
-                class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 px-6"
+                class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 px-6 lg:max-w-6xl"
             >
-                <div class="bg-neutral-100 rounded-xl p-6 text-center">
+                <div class="bg-neutral-100 rounded-xl p-8 text-center">
                     <p class="text-3xl font-bold text-orange-500">7e</p>
                     <p class="text-sm text-gray-600">Édition en 2025</p>
                 </div>
 
-                <div class="bg-neutral-100 rounded-xl p-6 text-center">
+                <div class="bg-neutral-100 rounded-xl p-8 text-center">
                     <p class="text-3xl font-bold text-orange-500">10k+</p>
                     <p class="text-sm text-gray-600">Festivaliers en 2024</p>
                 </div>
 
-                <div class="bg-neutral-100 rounded-xl p-6 text-center">
+                <div class="bg-neutral-100 rounded-xl p-8 text-center">
                     <p class="text-3xl font-bold text-orange-500">30+</p>
                     <p class="text-sm text-gray-600">Artistes depuis 2018</p>
                 </div>
             </div>
         </section>
 
-        <section class="max-w-5xl mx-auto px-6 py-16">
+        <section class="max-w-5xl mx-auto px-6 py-16 lg:max-w-6xl">
             <h2 class="text-3xl font-bold mb-6">L'équipe</h2>
 
             <p class="text-gray-600 mb-10">
@@ -79,9 +82,10 @@ import FestivalHero from "../assets/img/Lazy-birds.avif";
                 unique et de qualité.
             </p>
 
-            <div class="grid md:grid-cols-2 gap-8">
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-10">
                 <div class="bg-neutral-100 rounded-xl p-6">
                     <h3 class="font-semibold mb-4">Équipe organisatrice</h3>
+
                     <ul class="space-y-2 text-gray-600">
                         <li>Direction artistique</li>
                         <li>Communication & marketing</li>
@@ -93,6 +97,7 @@ import FestivalHero from "../assets/img/Lazy-birds.avif";
 
                 <div class="bg-neutral-100 rounded-xl p-6">
                     <h3 class="font-semibold mb-4">Équipes techniques</h3>
+
                     <ul class="space-y-2 text-gray-600">
                         <li>Régie son & lumière</li>
                         <li>Montage & démontage</li>
@@ -121,7 +126,9 @@ import FestivalHero from "../assets/img/Lazy-birds.avif";
         <section class="py-16 px-6">
             <h2 class="text-3xl font-bold text-center mb-12">Nos valeurs</h2>
 
-            <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
+            <div
+                class="max-w-5xl mx-auto grid md:grid-cols-2 gap-6 lg:max-w-6xl lg:grid-cols-4"
+            >
                 <div class="bg-white rounded-xl p-6 shadow-sm">
                     <h3 class="font-semibold mb-2 text-orange-500">
                         Écoresponsabilité
@@ -165,16 +172,18 @@ import FestivalHero from "../assets/img/Lazy-birds.avif";
         </section>
 
         <section class="bg-neutral-100 py-16 px-6 text-center">
-            <h2 class="text-3xl font-bold mb-4">
-                Édition 2025 : "Retour aux sources"
-            </h2>
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4">
+                    Édition 2025 : "Retour aux sources"
+                </h2>
 
-            <p class="max-w-3xl mx-auto text-gray-600">
-                Pour cette 7e édition, nous mettons à l'honneur les racines
-                musicales de notre région. Jazz traditionnel, fanfares comtoises
-                et musiques de rue se mêleront pour célébrer l'authenticité et
-                la transmission.
-            </p>
+                <p class="text-gray-600">
+                    Pour cette 7e édition, nous mettons à l'honneur les racines
+                    musicales de notre région. Jazz traditionnel, fanfares
+                    comtoises et musiques de rue se mêleront pour célébrer
+                    l'authenticité et la transmission.
+                </p>
+            </div>
         </section>
     </main>
 </Layout>

@@ -26,24 +26,25 @@ import Ticket from "../assets/icons/ticket.svg";
                     class="h-full w-full object-cover"
                 />
             </div>
+
             <div class="absolute inset-0 bg-black/40"></div>
 
             <div
-                class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center"
+                class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center lg:max-w-4xl lg:mx-auto"
             >
                 <h1
-                    class="mb-6 max-w-xl text-4xl font-bold uppercase leading-tight text-white"
+                    class="mb-6 max-w-xl text-4xl font-bold uppercase leading-tight text-white lg:text-5xl"
                 >
                     Jazz, fanfares & musiques de rues
                 </h1>
 
                 <div class="mb-8 h-1 w-20 bg-orange-400"></div>
+
                 <div class="mb-8 flex flex-col gap-4 sm:flex-row">
                     <div
                         class="flex items-center gap-3 rounded-xl bg-white px-5 py-4 shadow-md"
                     >
                         <Date class="w-5 h-5" />
-
                         <div class="text-left">
                             <p class="text-xs uppercase text-gray-400">Date</p>
                             <p class="text-lg font-semibold">27–29 juin 2025</p>
@@ -54,13 +55,13 @@ import Ticket from "../assets/icons/ticket.svg";
                         class="flex items-center gap-3 rounded-xl bg-white px-5 py-4 shadow-md"
                     >
                         <Location class="w-5 h-5" />
-
                         <div class="text-left">
                             <p class="text-xs uppercase text-gray-400">Lieu</p>
                             <p class="text-lg font-semibold">Montbéliard</p>
                         </div>
                     </div>
                 </div>
+
                 <div class="flex flex-col items-center gap-4">
                     <a
                         href="#"
@@ -92,7 +93,9 @@ import Ticket from "../assets/icons/ticket.svg";
         </section>
 
         <section class="px-6 py-14">
-            <div class="mx-auto grid max-w-4xl gap-6 sm:grid-cols-2">
+            <div
+                class="mx-auto grid max-w-4xl gap-6 sm:grid-cols-2 lg:max-w-6xl lg:grid-cols-4"
+            >
                 <div
                     class="rounded-xl bg-white p-6 shadow-sm transition hover:shadow-md"
                 >
@@ -148,13 +151,14 @@ import Ticket from "../assets/icons/ticket.svg";
                 Découvrez le festival
             </h2>
 
-            <div class="mx-auto max-w-3xl space-y-4">
+            <div
+                class="mx-auto max-w-3xl space-y-4 lg:max-w-6xl lg:grid lg:grid-cols-3 lg:gap-6 lg:space-y-0"
+            >
                 <a
                     class="group flex items-center justify-between rounded-xl bg-white p-6 shadow-sm transition hover:shadow-md"
                 >
                     <div class="flex items-start gap-4">
                         <svg class="mt-1 h-6 w-6"></svg>
-
                         <div>
                             <h3 class="font-semibold">Programme</h3>
                             <p class="text-sm text-gray-500">
@@ -162,10 +166,9 @@ import Ticket from "../assets/icons/ticket.svg";
                             </p>
                         </div>
                     </div>
-
-                    <span class="text-xl transition group-hover:translate-x-1">
-                        →
-                    </span>
+                    <span class="text-xl transition group-hover:translate-x-1"
+                        >→</span
+                    >
                 </a>
 
                 <a
@@ -173,7 +176,6 @@ import Ticket from "../assets/icons/ticket.svg";
                 >
                     <div class="flex items-start gap-4">
                         <svg class="mt-1 h-6 w-6"></svg>
-
                         <div>
                             <h3 class="font-semibold">Artistes</h3>
                             <p class="text-sm text-gray-500">
@@ -181,10 +183,9 @@ import Ticket from "../assets/icons/ticket.svg";
                             </p>
                         </div>
                     </div>
-
-                    <span class="text-xl transition group-hover:translate-x-1">
-                        →
-                    </span>
+                    <span class="text-xl transition group-hover:translate-x-1"
+                        >→</span
+                    >
                 </a>
 
                 <a
@@ -192,7 +193,6 @@ import Ticket from "../assets/icons/ticket.svg";
                 >
                     <div class="flex items-start gap-4">
                         <svg class="mt-1 h-6 w-6"></svg>
-
                         <div>
                             <h3 class="font-semibold">Infos pratiques</h3>
                             <p class="text-sm text-gray-500">
@@ -200,10 +200,9 @@ import Ticket from "../assets/icons/ticket.svg";
                             </p>
                         </div>
                     </div>
-
-                    <span class="text-xl transition group-hover:translate-x-1">
-                        →
-                    </span>
+                    <span class="text-xl transition group-hover:translate-x-1"
+                        >→</span
+                    >
                 </a>
             </div>
         </section>
@@ -213,7 +212,9 @@ import Ticket from "../assets/icons/ticket.svg";
                 Nos partenaires
             </h2>
 
-            <div class="relative w-full overflow-hidden">
+            <div
+                class="relative w-full overflow-hidden lg:max-w-6xl lg:mx-auto"
+            >
                 <div
                     id="partners-track"
                     class="flex gap-12 w-max px-6 items-center"
@@ -287,7 +288,6 @@ import Ticket from "../assets/icons/ticket.svg";
         </div>
     </section>
 </Layout>
-
 <script>
     const track = document.getElementById("partners-track");
 

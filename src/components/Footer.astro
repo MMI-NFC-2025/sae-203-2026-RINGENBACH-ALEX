@@ -6,39 +6,63 @@ import Facebook from "../assets/icons/facebook.svg";
 import Instagram from "../assets/icons/instagram.svg";
 ---
 
-<footer class="bg-gray-100 text-gray-700">
-    <div class="px-6 py-10 flex flex-col gap-10">
-        <!-- Navigation -->
+<footer class="bg-[#ebe6da] text-neutral-700">
+    <div
+        class="px-6 py-12 flex flex-col gap-10 lg:max-w-6xl lg:mx-auto lg:grid lg:grid-cols-3 lg:gap-12"
+    >
         <nav>
-            <h3 class="font-semibold text-lg mb-4">Navigation</h3>
+            <h3 class="font-semibold text-lg mb-4 text-neutral-900">
+                Navigation
+            </h3>
 
             <ul class="flex flex-col gap-2 text-sm">
-                <li><a href="/" class="hover:underline">Accueil</a></li>
                 <li>
-                    <a href="/festival" class="hover:underline">Le Festival</a>
+                    <a href="/" class="hover:text-[#d97706] transition">
+                        Accueil
+                    </a>
                 </li>
+
                 <li>
-                    <a href="/programme" class="hover:underline">Programme</a>
+                    <a href="/festival" class="hover:text-[#d97706] transition">
+                        Le Festival
+                    </a>
                 </li>
+
                 <li>
-                    <a href="/artistes" class="hover:underline">Artistes</a>
+                    <a
+                        href="/programme"
+                        class="hover:text-[#d97706] transition"
+                    >
+                        Programme
+                    </a>
                 </li>
+
                 <li>
-                    <a href="/infos" class="hover:underline">Infos Pratiques</a>
+                    <a href="/artistes" class="hover:text-[#d97706] transition">
+                        Artistes
+                    </a>
                 </li>
-                <li><a href="/contact" class="hover:underline">Contact</a></li>
+
+                <li>
+                    <a href="/infos" class="hover:text-[#d97706] transition">
+                        Infos Pratiques
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/contact" class="hover:text-[#d97706] transition">
+                        Contact
+                    </a>
+                </li>
             </ul>
         </nav>
 
-        <!-- Contact -->
         <div>
-            <h3 class="font-semibold text-lg mb-4">Contact</h3>
+            <h3 class="font-semibold text-lg mb-4 text-neutral-900">Contact</h3>
 
             <address class="not-italic flex flex-col gap-4 text-sm">
                 <p class="flex items-start gap-3">
-                    <!-- Icon location placeholder -->
-                    <Location class="w-5 h-5 text-orange-500 shrink-0" />
-
+                    <Location class="w-5 h-5 text-[#d97706] shrink-0" />
                     <span>
                         Place Saint-Martin <br />
                         25200 Montbéliard
@@ -46,31 +70,31 @@ import Instagram from "../assets/icons/instagram.svg";
                 </p>
 
                 <p class="flex items-center gap-3">
-                    <!-- Icon mail placeholder -->
-                    <Mail class="w-5 h-5 text-orange-500 shrink-0" />
-
+                    <Mail class="w-5 h-5 text-[#d97706] shrink-0" />
                     <a
                         href="mailto:contact@fanfacomtoise.fr"
-                        class="hover:underline"
+                        class="hover:text-[#d97706] transition"
                     >
                         contact@fanfacomtoise.fr
                     </a>
                 </p>
 
                 <p class="flex items-center gap-3">
-                    <!-- Icon phone placeholder -->
-                    <Phone class="w-5 h-5 text-orange-500 shrink-0" />
-
-                    <a href="tel:0381123456" class="hover:underline">
+                    <Phone class="w-5 h-5 text-[#d97706] shrink-0" />
+                    <a
+                        href="tel:0381123456"
+                        class="hover:text-[#d97706] transition"
+                    >
                         03 81 12 34 56
                     </a>
                 </p>
             </address>
         </div>
 
-        <!-- Réseaux sociaux -->
         <div>
-            <h3 class="font-semibold text-lg mb-2">Suivez-nous</h3>
+            <h3 class="font-semibold text-lg mb-2 text-neutral-900">
+                Suivez-nous
+            </h3>
 
             <p class="text-sm mb-4">
                 Restez informés de l'actualité du festival
@@ -81,9 +105,8 @@ import Instagram from "../assets/icons/instagram.svg";
                     <a
                         href="#"
                         aria-label="Facebook"
-                        class="w-10 h-10 flex items-center justify-center rounded-full bg-green-200"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-[#c6d68b] hover:bg-[#b7c977] transition"
                     >
-                        <!-- Facebook icon placeholder -->
                         <Facebook class="w-5 h-5 text-white" />
                     </a>
                 </li>
@@ -92,9 +115,8 @@ import Instagram from "../assets/icons/instagram.svg";
                     <a
                         href="#"
                         aria-label="Instagram"
-                        class="w-10 h-10 flex items-center justify-center rounded-full bg-green-200"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-[#c6d68b] hover:bg-[#b7c977] transition"
                     >
-                        <!-- Instagram icon placeholder -->
                         <Instagram class="w-5 h-5 text-white" />
                     </a>
                 </li>
@@ -102,7 +124,7 @@ import Instagram from "../assets/icons/instagram.svg";
         </div>
     </div>
 
-    <div class="bg-green-200 text-center text-sm py-4">
+    <div class="bg-[#c6d68b] text-center text-sm py-4 text-neutral-800">
         © 2025 La Fanfà'Comtoise - Tous droits réservés
     </div>
 </footer>

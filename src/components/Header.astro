@@ -3,16 +3,59 @@ import Logo from "../assets/icons/logo-du-site.svg";
 ---
 
 <header class="fixed top-0 left-0 w-full bg-white z-50">
-    <div class="flex items-center justify-between px-6 py-4">
-        <!-- Logo -->
+    <div
+        class="flex items-center justify-between px-6 py-4 lg:max-w-6xl lg:mx-auto"
+    >
         <div>
             <a href="/" aria-label="Accueil">
                 <Logo class="h-10 w-auto" />
             </a>
         </div>
 
-        <div class="flex items-center gap-4">
-            <!-- Bouton menu -->
+        <nav class="hidden lg:block">
+            <ul class="flex items-center gap-8 text-sm font-medium">
+                <li>
+                    <a href="/Festival" class="hover:text-[#d97706] transition">
+                        Le Festival
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Artistes" class="hover:text-[#d97706] transition">
+                        Artistes
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="/Programme"
+                        class="hover:text-[#d97706] transition"
+                    >
+                        Programme
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Scenes" class="hover:text-[#d97706] transition">
+                        Scènes
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Infos" class="hover:text-[#d97706] transition">
+                        Infos pratiques
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/Contact" class="hover:text-[#d97706] transition">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="flex items-center gap-4 lg:hidden">
             <button
                 id="menu-btn"
                 aria-label="Menu"
@@ -25,13 +68,11 @@ import Logo from "../assets/icons/logo-du-site.svg";
                 <span class="block w-6 h-0.5 bg-black"></span>
             </button>
 
-            <!-- Navigation -->
             <nav
                 id="menu"
                 aria-hidden="true"
-                class="fixed inset-0 bg-black/90 text-white flex items-center justify-center hidden"
+                class="fixed inset-0 bg-black text-white flex items-center justify-center hidden"
             >
-                <!-- bouton fermer -->
                 <button
                     id="close-menu"
                     aria-label="Fermer le menu"
