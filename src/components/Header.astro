@@ -1,0 +1,76 @@
+---
+import Logo from "../assets/icons/logo-du-site.svg";
+---
+
+<header class="fixed top-0 left-0 w-full bg-white z-50">
+    <div class="flex items-center justify-between px-6 py-4">
+        <!-- Logo -->
+        <div>
+            <a href="/" aria-label="Accueil">
+                <Logo class="h-10 w-auto" />
+            </a>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <!-- Bouton menu -->
+            <button
+                id="menu-btn"
+                aria-label="Menu"
+                aria-controls="menu"
+                aria-expanded="false"
+                class="flex flex-col gap-1 z-50"
+            >
+                <span class="block w-6 h-0.5 bg-black"></span>
+                <span class="block w-6 h-0.5 bg-black"></span>
+                <span class="block w-6 h-0.5 bg-black"></span>
+            </button>
+
+            <!-- Navigation -->
+            <nav
+                id="menu"
+                aria-hidden="true"
+                class="fixed inset-0 bg-black/90 text-white flex items-center justify-center hidden"
+            >
+                <!-- bouton fermer -->
+                <button
+                    id="close-menu"
+                    aria-label="Fermer le menu"
+                    class="absolute top-6 right-6 text-3xl"
+                >
+                    ✕
+                </button>
+
+                <ul class="flex flex-col gap-8 text-lg text-center">
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/festival">Le Festival</a></li>
+                    <li><a href="/artistes">Artistes</a></li>
+                    <li><a href="/programme">Programme</a></li>
+                    <li><a href="/scenes">Scènes</a></li>
+                    <li><a href="/infos">Infos pratiques</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<script>
+    const menuBtn = document.getElementById("menu-btn");
+    const closeBtn = document.getElementById("close-menu");
+    const menu = document.getElementById("menu");
+
+    function openMenu() {
+        menu.classList.remove("hidden");
+        menuBtn.setAttribute("aria-expanded", "true");
+        menu.setAttribute("aria-hidden", "false");
+    }
+
+    function closeMenu() {
+        menu.classList.add("hidden");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menu.setAttribute("aria-hidden", "true");
+    }
+
+    menuBtn.addEventListener("click", openMenu);
+    closeBtn.addEventListener("click", closeMenu);
+</script>

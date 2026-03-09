@@ -1,0 +1,108 @@
+---
+import Mail from "../assets/icons/mail.svg";
+import Location from "../assets/icons/position.svg";
+import Phone from "../assets/icons/call.svg";
+import Facebook from "../assets/icons/facebook.svg";
+import Instagram from "../assets/icons/instagram.svg";
+---
+
+<footer class="bg-gray-100 text-gray-700">
+    <div class="px-6 py-10 flex flex-col gap-10">
+        <!-- Navigation -->
+        <nav>
+            <h3 class="font-semibold text-lg mb-4">Navigation</h3>
+
+            <ul class="flex flex-col gap-2 text-sm">
+                <li><a href="/" class="hover:underline">Accueil</a></li>
+                <li>
+                    <a href="/festival" class="hover:underline">Le Festival</a>
+                </li>
+                <li>
+                    <a href="/programme" class="hover:underline">Programme</a>
+                </li>
+                <li>
+                    <a href="/artistes" class="hover:underline">Artistes</a>
+                </li>
+                <li>
+                    <a href="/infos" class="hover:underline">Infos Pratiques</a>
+                </li>
+                <li><a href="/contact" class="hover:underline">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Contact -->
+        <div>
+            <h3 class="font-semibold text-lg mb-4">Contact</h3>
+
+            <address class="not-italic flex flex-col gap-4 text-sm">
+                <p class="flex items-start gap-3">
+                    <!-- Icon location placeholder -->
+                    <Location class="w-5 h-5 text-orange-500 shrink-0" />
+
+                    <span>
+                        Place Saint-Martin <br />
+                        25200 Montbéliard
+                    </span>
+                </p>
+
+                <p class="flex items-center gap-3">
+                    <!-- Icon mail placeholder -->
+                    <Mail class="w-5 h-5 text-orange-500 shrink-0" />
+
+                    <a
+                        href="mailto:contact@fanfacomtoise.fr"
+                        class="hover:underline"
+                    >
+                        contact@fanfacomtoise.fr
+                    </a>
+                </p>
+
+                <p class="flex items-center gap-3">
+                    <!-- Icon phone placeholder -->
+                    <Phone class="w-5 h-5 text-orange-500 shrink-0" />
+
+                    <a href="tel:0381123456" class="hover:underline">
+                        03 81 12 34 56
+                    </a>
+                </p>
+            </address>
+        </div>
+
+        <!-- Réseaux sociaux -->
+        <div>
+            <h3 class="font-semibold text-lg mb-2">Suivez-nous</h3>
+
+            <p class="text-sm mb-4">
+                Restez informés de l'actualité du festival
+            </p>
+
+            <ul class="flex gap-4">
+                <li>
+                    <a
+                        href="#"
+                        aria-label="Facebook"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-green-600"
+                    >
+                        <!-- Facebook icon placeholder -->
+                        <Facebook class="w-5 h-5 text-white" />
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="#"
+                        aria-label="Instagram"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-green-600"
+                    >
+                        <!-- Instagram icon placeholder -->
+                        <Instagram class="w-5 h-5 text-white" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="bg-green-600 text-center text-sm py-4">
+        © 2025 La Fanfà'Comtoise - Tous droits réservés
+    </div>
+</footer>
