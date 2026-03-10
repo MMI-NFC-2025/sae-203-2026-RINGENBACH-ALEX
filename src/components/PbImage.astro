@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+import { getImageUrl } from "../../backend/backend.mjs";
+
+const {
+    record,
+    recordImage,
+    alt = "Image",
+    class: className = "",
+} = Astro.props;
+
+const imageURL = getImageUrl(record, recordImage);
+---
+
+{imageURL && <img src={imageURL} alt={alt} class={className} />}

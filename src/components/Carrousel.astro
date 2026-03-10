@@ -1,0 +1,81 @@
+---
+import Moloco from "../assets/icons/moloco.svg";
+import Montbeliard from "../assets/icons/Montbeliard.svg";
+import PMontbeliard from "../assets/icons/Pays_de_Montbeliard.svg";
+import Airbnb from "../assets/icons/airbnb.svg";
+import CA from "../assets/icons/Credit-Agricole-Logo.svg";
+import Doubs from "../assets/icons/doubs.svg";
+import Comte from "../assets/icons/comte.svg";
+---
+
+<section class="bg-gray-100 py-16 overflow-hidden">
+    <h2 class="text-center text-3xl font-bold mb-10">Nos partenaires</h2>
+
+    <div class="relative w-full overflow-hidden lg:max-w-6xl lg:mx-auto">
+        <div id="partners-track" class="flex gap-12 w-max px-6 items-center">
+            <div
+                class="flex items-center justify-center w-40 h-20 bg-white rounded-lg shadow"
+            >
+                <Moloco class="h-10 w-auto" />
+            </div>
+
+            <div
+                class="flex items-center justify-center w-40 h-20 bg-white rounded-lg shadow"
+            >
+                <Montbeliard class="h-10 w-auto" />
+            </div>
+
+            <div
+                class="flex items-center justify-center w-40 h-20 bg-white rounded-lg shadow"
+            >
+                <PMontbeliard class="h-10 w-auto" />
+            </div>
+
+            <div
+                class="flex items-center justify-center w-40 h-20 bg-white rounded-lg shadow"
+            >
+                <Airbnb class="h-10 w-auto" />
+            </div>
+
+            <div
+                class="flex items-center justify-center w-40 h-20 bg-white rounded-lg shadow"
+            >
+                <CA class="h-10 w-auto" />
+            </div>
+
+            <div
+                class="flex items-center justify-center w-40 h-20 bg-white rounded-lg shadow"
+            >
+                <Doubs class="h-10 w-auto" />
+            </div>
+
+            <div
+                class="flex items-center justify-center w-40 h-20 bg-white rounded-lg shadow"
+            >
+                <Comte class="h-10 w-auto" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const track = document.getElementById("partners-track");
+
+    track.innerHTML += track.innerHTML;
+
+    let position = 0;
+    const speed = 0.3;
+
+    function animate() {
+        position -= speed;
+        track.style.transform = `translateX(${position}px)`;
+
+        if (Math.abs(position) >= track.scrollWidth / 2) {
+            position = 0;
+        }
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+</script>

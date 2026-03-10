@@ -1,34 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import HeroImage from "../assets/img/hero-du-site.avif";
+import Hero from "../components/Hero.astro";
 import Date from "../assets/icons/date-orange.svg";
 import DateWhite from "../assets/icons/date-blanc.svg";
 import Location from "../assets/icons/position.svg";
-import Moloco from "../assets/icons/moloco.svg";
-import Montbeliard from "../assets/icons/Montbeliard.svg";
-import PMontbeliard from "../assets/icons/Pays_de_Montbeliard.svg";
-import Airbnb from "../assets/icons/airbnb.svg";
-import CA from "../assets/icons/Credit-Agricole-Logo.svg";
-import Doubs from "../assets/icons/doubs.svg";
-import Comte from "../assets/icons/comte.svg";
 import Feuille from "../assets/icons/feuille.svg";
 import Gratuit from "../assets/icons/gratuit.svg";
 import Ticket from "../assets/icons/ticket.svg";
+import Carrousel from "../components/Carrousel.astro";
 ---
 
 <Layout>
     <main class="bg-neutral-50 text-neutral-900">
         <section class="relative h-[90vh] min-h-150 w-full overflow-hidden">
-            <div class="absolute inset-0">
-                <img
-                    src={HeroImage.src}
-                    alt="Festival La Fanfà'Comtoise"
-                    class="h-full w-full object-cover"
-                />
-            </div>
-
+            <Hero />
             <div class="absolute inset-0 bg-black/40"></div>
-
             <div
                 class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center lg:max-w-4xl lg:mx-auto"
             >
@@ -37,9 +23,7 @@ import Ticket from "../assets/icons/ticket.svg";
                 >
                     Jazz, fanfares & musiques de rues
                 </h1>
-
                 <div class="mb-8 h-1 w-20 bg-orange-400"></div>
-
                 <div class="mb-8 flex flex-col gap-4 sm:flex-row">
                     <div
                         class="flex items-center gap-3 rounded-xl bg-white px-5 py-4 shadow-md"
@@ -50,7 +34,6 @@ import Ticket from "../assets/icons/ticket.svg";
                             <p class="text-lg font-semibold">27–29 juin 2025</p>
                         </div>
                     </div>
-
                     <div
                         class="flex items-center gap-3 rounded-xl bg-white px-5 py-4 shadow-md"
                     >
@@ -61,7 +44,6 @@ import Ticket from "../assets/icons/ticket.svg";
                         </div>
                     </div>
                 </div>
-
                 <div class="flex flex-col items-center gap-4">
                     <a
                         href="#"
@@ -70,7 +52,6 @@ import Ticket from "../assets/icons/ticket.svg";
                         <DateWhite class="w-5 h-5" />
                         Découvrir le programme →
                     </a>
-
                     <div class="flex gap-3">
                         <a
                             href="#"
@@ -79,7 +60,6 @@ import Ticket from "../assets/icons/ticket.svg";
                             <Ticket class="text-black w-5 h-5" />
                             Billetterie
                         </a>
-
                         <a
                             href="#"
                             class="flex items-center gap-2 rounded-full bg-lime-300 px-6 py-3 font-semibold shadow hover:bg-lime-400"
@@ -91,7 +71,6 @@ import Ticket from "../assets/icons/ticket.svg";
                 </div>
             </div>
         </section>
-
         <section class="px-6 py-14">
             <div
                 class="mx-auto grid max-w-4xl gap-6 sm:grid-cols-2 lg:max-w-6xl lg:grid-cols-4"
@@ -107,7 +86,6 @@ import Ticket from "../assets/icons/ticket.svg";
                         Jazz, fanfare et musiques de rue
                     </p>
                 </div>
-
                 <div
                     class="rounded-xl bg-white p-6 shadow-sm transition hover:shadow-md"
                 >
@@ -119,7 +97,6 @@ import Ticket from "../assets/icons/ticket.svg";
                         Festival écoresponsable et local
                     </p>
                 </div>
-
                 <div
                     class="rounded-xl bg-white p-6 shadow-sm transition hover:shadow-md"
                 >
@@ -131,7 +108,6 @@ import Ticket from "../assets/icons/ticket.svg";
                         Ouvert et accessible à tous
                     </p>
                 </div>
-
                 <div
                     class="rounded-xl bg-white p-6 shadow-sm transition hover:shadow-md"
                 >
@@ -145,12 +121,10 @@ import Ticket from "../assets/icons/ticket.svg";
                 </div>
             </div>
         </section>
-
         <section class="bg-gray-100 px-6 py-14">
             <h2 class="mb-10 text-center text-3xl font-bold">
                 Découvrez le festival
             </h2>
-
             <div
                 class="mx-auto max-w-3xl space-y-4 lg:max-w-6xl lg:grid lg:grid-cols-3 lg:gap-6 lg:space-y-0"
             >
@@ -170,7 +144,6 @@ import Ticket from "../assets/icons/ticket.svg";
                         >→</span
                     >
                 </a>
-
                 <a
                     class="group flex items-center justify-between rounded-xl bg-white p-6 shadow-sm transition hover:shadow-md"
                 >
@@ -187,7 +160,6 @@ import Ticket from "../assets/icons/ticket.svg";
                         >→</span
                     >
                 </a>
-
                 <a
                     class="group flex items-center justify-between rounded-xl bg-white p-6 shadow-sm transition hover:shadow-md"
                 >
@@ -206,65 +178,8 @@ import Ticket from "../assets/icons/ticket.svg";
                 </a>
             </div>
         </section>
-
-        <section class="bg-gray-100 py-16 overflow-hidden">
-            <h2 class="text-center text-3xl font-bold mb-10">
-                Nos partenaires
-            </h2>
-
-            <div
-                class="relative w-full overflow-hidden lg:max-w-6xl lg:mx-auto"
-            >
-                <div
-                    id="partners-track"
-                    class="flex gap-12 w-max px-6 items-center"
-                >
-                    <div
-                        class="flex items-center justify-center w-40 h-20 bg-white rounded-lg shadow"
-                    >
-                        <Moloco class="h-10 w-auto" />
-                    </div>
-
-                    <div
-                        class="flex items-center justify-center w-40 h-20 bg-white rounded-lg shadow"
-                    >
-                        <Montbeliard class="h-10 w-auto" />
-                    </div>
-
-                    <div
-                        class="flex items-center justify-center w-40 h-20 bg-white rounded-lg shadow"
-                    >
-                        <PMontbeliard class="h-10 w-auto" />
-                    </div>
-
-                    <div
-                        class="flex items-center justify-center w-40 h-20 bg-white rounded-lg shadow"
-                    >
-                        <Airbnb class="h-10 w-auto" />
-                    </div>
-
-                    <div
-                        class="flex items-center justify-center w-40 h-20 bg-white rounded-lg shadow"
-                    >
-                        <CA class="h-10 w-auto" />
-                    </div>
-
-                    <div
-                        class="flex items-center justify-center w-40 h-20 bg-white rounded-lg shadow"
-                    >
-                        <Doubs class="h-10 w-auto" />
-                    </div>
-
-                    <div
-                        class="flex items-center justify-center w-40 h-20 bg-white rounded-lg shadow"
-                    >
-                        <Comte class="h-10 w-auto" />
-                    </div>
-                </div>
-            </div>
-        </section>
+        <Carrousel />
     </main>
-
     <section class="bg-orange-400 px-6 py-14 text-center text-white">
         <h2 class="mb-4 text-3xl font-bold">Préparez votre venue</h2>
 
@@ -272,7 +187,6 @@ import Ticket from "../assets/icons/ticket.svg";
             Téléchargez le programme complet et consultez toutes les
             informations pratiques pour profiter pleinement du festival.
         </p>
-
         <div
             class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
         >
@@ -288,24 +202,3 @@ import Ticket from "../assets/icons/ticket.svg";
         </div>
     </section>
 </Layout>
-<script>
-    const track = document.getElementById("partners-track");
-
-    track.innerHTML += track.innerHTML;
-
-    let position = 0;
-    const speed = 0.3;
-
-    function animate() {
-        position -= speed;
-        track.style.transform = `translateX(${position}px)`;
-
-        if (Math.abs(position) >= track.scrollWidth / 2) {
-            position = 0;
-        }
-
-        requestAnimationFrame(animate);
-    }
-
-    animate();
-</script>
