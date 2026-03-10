@@ -9,7 +9,7 @@ const {
     class: className = "",
 } = Astro.props;
 
-const imageURL = getImageUrl(record, recordImage);
+const imageURL = await getImageUrl(record, recordImage);
 ---
 
 {imageURL && <img src={imageURL} alt={alt} class={className} />}

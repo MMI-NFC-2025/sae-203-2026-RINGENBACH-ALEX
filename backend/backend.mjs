@@ -1,8 +1,30 @@
 import PocketBase from "pocketbase";
 const pb = new PocketBase("https://sae203.alex-ringenbach.fr");
 
-export async function getImageUrl(record, recordImage) {
-    return db.files.getURL(record, recordImage);
+export function getImageUrl(record, field) {
+    if (!record || !record[field]) {
+        return null;
+    }
+
+    return pb.files.getURL(record, record[field]);
+}
+
+export function getFileUrl(record, filename) {
+    if (!record || !filename) {
+        return null;
+    }
+
+    return pb.files.getURL(record, filename);
+}
+
+export async function allScenesSorted() {
+
+    const records = await pb.collection("scene").getFullList({
+        sort: "nom"
+    });
+
+    return records;
+
 }
 
 export async function allArtistesByDate() {
@@ -32,9 +54,11 @@ export async function allArtistesAlphabetical() {
 
 
 export async function oneArtisteById(id) {
+
     const record = await pb.collection("artiste").getOne(id, {
         expand: "scene"
     });
+
     return record;
 }
 
@@ -121,3 +145,15 @@ export function isAuthValid() {
     return pb.authStore.isValid;
 }
 
+export async function addNewUser(newUser) {
+
+    const record = await pb.collection("users").create({
+        email: newUser.email,
+        password: newUser.password,
+        passwordConfirm: newUser.passwordConfirm,
+        name: newUser.name
+    });
+
+    return record;
+
+}

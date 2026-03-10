@@ -1,45 +1,96 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { oneArtisteById } from "../../../backend/backend.mjs";
+import PbImage from "../../components/PbImage.astro";
+import { oneArtisteById, getFileUrl } from "../../../backend/backend.mjs";
 
 const { id } = Astro.params;
 
 const artiste = await oneArtisteById(id);
+
+const galerie = artiste.galerie || [];
 ---
 
 <Layout>
     <main class="bg-[#f6f4ef] text-neutral-900">
         <section class="bg-[#d97706] text-white py-20 text-center px-6">
-            <h1 class="text-4xl font-bold mb-4">
-                {artiste.prenom}
-                {artiste.nom}
+            <h1 class="text-4xl font-bold">
+                {
+                    artiste.prenom
+                        ? `${artiste.prenom} ${artiste.nom}`
+                        : artiste.nom
+                }
             </h1>
-
-            <p class="text-lg text-white/90">
-                {artiste.genre}
-            </p>
         </section>
-
-        <section class="max-w-4xl mx-auto px-6 py-16">
-            <div
-                class="bg-white rounded-xl p-8 shadow-sm border border-neutral-200"
+        <div class="max-w-6xl mx-auto px-6 pt-10">
+            <button
+                onclick="history.back()"
+                class="flex items-center gap-2 text-sm text-neutral-700 hover:text-[#d97706] transition"
             >
+                ← Retour
+            </button>
+        </div>
+        <section
+            class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10"
+        >
+            <div class="w-full h-100 bg-neutral-200 rounded-xl overflow-hidden">
+                <PbImage
+                    record={artiste}
+                    recordImage="photo"
+                    alt={`${artiste.prenom || ""} ${artiste.nom}`}
+                    class="w-full h-full object-cover"
+                />
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-bold mb-4">À propos de l'artiste</h2>
+
                 <p class="text-neutral-600 mb-6">
                     {artiste.description}
                 </p>
 
-                <p class="text-sm text-neutral-500">
-                    Date : {new Date(artiste.date).toLocaleString()}
-                </p>
+                <div class="space-y-2 text-neutral-700">
+                    {
+                        artiste.expand?.scene && (
+                            <p>
+                                <strong>Scène :</strong>{" "}
+                                {artiste.expand.scene.nom}
+                            </p>
+                        )
+                    }
 
-                {
-                    artiste.expand?.scene && (
-                        <p class="text-sm text-neutral-500 mt-2">
-                            Scène : {artiste.expand.scene.nom}
-                        </p>
-                    )
-                }
+                    {
+                        artiste.date && (
+                            <p>
+                                <strong>Date :</strong>
+                                {new Date(artiste.date).toLocaleString("fr-FR")}
+                            </p>
+                        )
+                    }
+                </div>
             </div>
         </section>
+
+        {
+            galerie.length > 0 && (
+                <section class="max-w-6xl mx-auto px-6 pb-20">
+                    <h2 class="text-3xl font-bold mb-8 text-center">
+                        Galerie photo
+                    </h2>
+
+                    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+                        {galerie.map((image) => {
+                            const url = getFileUrl(artiste, image);
+
+                            return (
+                                <img
+                                    src={url}
+                                    class="w-full h-64 object-cover rounded-xl"
+                                />
+                            );
+                        })}
+                    </div>
+                </section>
+            )
+        }
     </main>
 </Layout>

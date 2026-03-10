@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import PbImage from "../../components/PbImage.astro";
+import ArtistCard from "../../components/ArtistCards.astro";
 import {
     allArtistesByDate,
     allScenesByName,
@@ -9,16 +9,13 @@ import {
 const artistes = await allArtistesByDate();
 const scenes = await allScenesByName();
 
-const genres = [
-    ...new Set(artistes.map((artiste) => artiste.genre).filter(Boolean)),
-];
+const genres = [...new Set(artistes.map((a) => a.genre).filter(Boolean))];
+
 const dates = [
     ...new Set(
         artistes
-            .filter((artiste) => artiste.date)
-            .map(
-                (artiste) => new Date(artiste.date).toISOString().split("T")[0],
-            ),
+            .filter((a) => a.date)
+            .map((a) => new Date(a.date).toISOString().split("T")[0]),
     ),
 ];
 ---
@@ -71,74 +68,16 @@ const dates = [
                 id="artistsGrid"
                 class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
             >
-                {
-                    artistes.map((artiste) => (
-                        <article
-                            class="artist-card bg-white rounded-xl shadow-sm border border-neutral-200 overflow-hidden hover:shadow-md transition"
-                            data-genre={artiste.genre || ""}
-                            data-scene={artiste.expand?.scene?.nom || ""}
-                            data-date={
-                                artiste.date
-                                    ? new Date(artiste.date)
-                                          .toISOString()
-                                          .split("T")[0]
-                                    : ""
-                            }
-                        >
-                            <a href={`/Artistes/${artiste.id}`} class="block">
-                                <div class="h-60 w-full bg-neutral-200">
-                                    <PbImage
-                                        record={artiste}
-                                        recordImage="photo"
-                                        alt={`${artiste.prenom || ""} ${artiste.nom}`}
-                                        class="h-full w-full object-cover"
-                                    />
-                                </div>
-
-                                <div class="p-6">
-                                    <h2 class="text-xl font-bold mb-2">
-                                        {artiste.prenom
-                                            ? `${artiste.prenom} ${artiste.nom}`
-                                            : artiste.nom}
-                                    </h2>
-
-                                    <p class="text-sm text-neutral-500 mb-2">
-                                        {artiste.genre}
-                                    </p>
-
-                                    {artiste.date && (
-                                        <p class="text-sm text-neutral-600">
-                                            {new Date(
-                                                artiste.date,
-                                            ).toLocaleString("fr-FR", {
-                                                day: "2-digit",
-                                                month: "long",
-                                                year: "numeric",
-                                                hour: "2-digit",
-                                                minute: "2-digit",
-                                            })}
-                                        </p>
-                                    )}
-
-                                    {artiste.expand?.scene && (
-                                        <p class="text-sm text-neutral-500 mt-2">
-                                            {artiste.expand.scene.nom}
-                                        </p>
-                                    )}
-                                </div>
-                            </a>
-                        </article>
-                    ))
-                }
+                {artistes.map((artiste) => <ArtistCard artiste={artiste} />)}
             </div>
         </section>
     </main>
 </Layout>
-
 <script>
     const genreFilter = document.getElementById("genreFilter");
     const sceneFilter = document.getElementById("sceneFilter");
     const dateFilter = document.getElementById("dateFilter");
+
     const cards = document.querySelectorAll(".artist-card");
 
     function filterArtists() {
@@ -153,17 +92,9 @@ const dates = [
 
             let visible = true;
 
-            if (genre && cardGenre !== genre) {
-                visible = false;
-            }
-
-            if (scene && cardScene !== scene) {
-                visible = false;
-            }
-
-            if (date && cardDate !== date) {
-                visible = false;
-            }
+            if (genre && cardGenre !== genre) visible = false;
+            if (scene && cardScene !== scene) visible = false;
+            if (date && cardDate !== date) visible = false;
 
             card.style.display = visible ? "block" : "none";
         });

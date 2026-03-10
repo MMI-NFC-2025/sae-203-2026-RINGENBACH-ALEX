@@ -1,0 +1,83 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ArtistCard from "../../components/ArtistCards.astro";
+import {
+    oneSceneById,
+    artistesBySceneId,
+    getFileUrl,
+} from "../../../backend/backend.mjs";
+
+const { id } = Astro.params;
+
+const scene = await oneSceneById(id);
+const artistes = await artistesBySceneId(id);
+
+const photo = scene.photo ? getFileUrl(scene, scene.photo) : null;
+---
+
+<Layout>
+    <main class="bg-[#f6f4ef] text-neutral-900">
+        <section class="bg-[#d97706] text-white py-20 text-center px-6">
+            <h1 class="text-4xl font-bold mb-4">
+                {scene.nom}
+            </h1>
+
+            <p class="text-white/90">
+                {scene.localisation}
+            </p>
+        </section>
+        <div class="max-w-6xl mx-auto px-6 pt-10">
+            <a
+                href="/Scenes"
+                class="inline-flex items-center gap-2 text-sm text-neutral-700 hover:text-[#d97706] transition"
+            >
+                ← Retour aux scènes
+            </a>
+        </div>
+        <section
+            class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10"
+        >
+            {
+                photo && (
+                    <img
+                        src={photo}
+                        class="w-full h-100 object-cover rounded-xl"
+                    />
+                )
+            }
+
+            <div>
+                <h2 class="text-2xl font-bold mb-4">À propos de la scène</h2>
+
+                <p class="text-neutral-600 mb-4">
+                    {scene.description}
+                </p>
+
+                <p class="text-neutral-700">
+                    <strong>Capacité :</strong>
+                    {scene.capacite}
+                </p>
+            </div>
+        </section>
+
+        <section class="max-w-6xl mx-auto px-6 pb-20">
+            <h2 class="text-3xl font-bold mb-10 text-center">
+                Artistes programmés
+            </h2>
+
+            {
+                artistes.length === 0 ? (
+                    <p class="text-center text-neutral-500">
+                        Aucun artiste programmé pour cette scène.
+                    </p>
+                ) : (
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {artistes.map((artiste) => (
+                            <ArtistCard artiste={artiste} />
+                        ))}
+                    </div>
+                )
+            }
+        </section>
+    </main>
+</Layout>

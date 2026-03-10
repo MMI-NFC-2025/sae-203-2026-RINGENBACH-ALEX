@@ -1,0 +1,26 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { allScenesSorted } from "../../../backend/backend.mjs";
+import SceneCard from "../../components/SceneCard.astro";
+
+const scenes = await allScenesSorted();
+---
+
+<Layout>
+    <main class="bg-[#f6f4ef] text-neutral-900">
+        <section class="bg-[#d97706] text-white py-20 text-center px-6">
+            <h1 class="text-4xl font-bold mb-4">Les scènes</h1>
+
+            <p class="max-w-xl mx-auto text-lg text-white/90">
+                Découvrez les différents lieux où se déroulent les concerts du
+                festival.
+            </p>
+        </section>
+
+        <section class="max-w-6xl mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {scenes.map((scene) => <SceneCard scene={scene} />)}
+            </div>
+        </section>
+    </main>
+</Layout>

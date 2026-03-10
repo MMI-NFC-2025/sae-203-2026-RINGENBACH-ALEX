@@ -1,0 +1,44 @@
+---
+import PbImage from "./PbImage.astro";
+
+const { artiste } = Astro.props;
+
+const sceneName = artiste.expand?.scene?.nom || "";
+const dateValue = artiste.date
+    ? new Date(artiste.date).toISOString().split("T")[0]
+    : "";
+---
+
+<article
+    class="artist-card bg-white rounded-xl shadow-sm border border-neutral-200 overflow-hidden hover:shadow-md transition"
+    data-genre={artiste.genre || ""}
+    data-scene={sceneName}
+    data-date={dateValue}
+>
+    <a href={`/Artistes/${artiste.id}`} class="block">
+        <div class="h-60 w-full bg-neutral-200">
+            <PbImage
+                record={artiste}
+                recordImage="photo"
+                alt={`${artiste.prenom || ""} ${artiste.nom}`}
+                class="h-full w-full object-cover"
+            />
+        </div>
+
+        <div class="p-6">
+            <h2 class="text-xl font-bold mb-2">
+                {
+                    artiste.prenom
+                        ? `${artiste.prenom} ${artiste.nom}`
+                        : artiste.nom
+                }
+            </h2>
+
+            <p class="text-sm text-neutral-500 mb-2">
+                {artiste.genre}
+            </p>
+
+            {sceneName && <p class="text-sm text-neutral-500">{sceneName}</p>}
+        </div>
+    </a>
+</article>
