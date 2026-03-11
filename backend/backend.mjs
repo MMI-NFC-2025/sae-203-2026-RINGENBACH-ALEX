@@ -157,3 +157,14 @@ export async function addNewUser(newUser) {
     return record;
 
 }
+
+export async function allArtistesProgramme() {
+
+    const records = await pb.collection("artiste").getFullList({
+        sort: "date",
+        expand: "scene"
+    });
+
+    return records;
+
+}

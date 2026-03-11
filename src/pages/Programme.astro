@@ -1,330 +1,128 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import HeroImage from "../assets/img/Lazy-birds.avif";
+import ArtistCard from "../components/ArtistCards.astro";
+import { allArtistesProgramme } from "../../backend/backend.mjs";
+const title = "Programme - Festival de Jazz de Montbéliard";
+
+const artistes = await allArtistesProgramme();
+
+const scenes = [...new Set(artistes.map((a) => a.expand?.scene?.nom))];
+const genres = [...new Set(artistes.map((a) => a.genre))];
 ---
 
-<Layout>
+<Layout title={title}>
     <main class="bg-[#f6f4ef] text-neutral-900">
-        <section class="relative h-[55vh] min-h-105 overflow-hidden">
-            <div class="absolute inset-0">
-                <img
-                    src={HeroImage.src}
-                    alt="Programme du festival"
-                    class="h-full w-full object-cover"
-                />
-            </div>
+        <section class="bg-orange-500 text-white py-20 text-center px-6">
+            <h1 class="text-4xl font-bold mb-4">Programme</h1>
 
-            <div class="absolute inset-0 bg-black/45"></div>
-
-            <div
-                class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center lg:max-w-4xl lg:mx-auto"
-            >
-                <div
-                    class="mb-4 rounded-full bg-white/95 px-5 py-2 text-sm font-medium text-[#d97706] shadow"
-                >
-                    27–29 juin 2025
-                </div>
-
-                <h1 class="mb-4 text-4xl font-bold text-white lg:text-5xl">
-                    Programme
-                </h1>
-
-                <p class="max-w-2xl text-lg text-white/90">
-                    3 jours de concerts gratuits dans le centre-ville de
-                    Montbéliard
-                </p>
-            </div>
-        </section>
-
-        <section class="max-w-6xl mx-auto px-6 py-12">
-            <div
-                class="rounded-2xl bg-white p-6 shadow-sm border border-neutral-200"
-            >
-                <h2 class="mb-6 text-2xl font-bold">Filtres</h2>
-
-                <div
-                    class="grid gap-4 lg:grid-cols-[1fr_1fr_auto] lg:items-end"
-                >
-                    <div>
-                        <label
-                            class="mb-2 block text-sm font-medium text-neutral-700"
-                        >
-                            Jour
-                        </label>
-                        <select
-                            class="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-neutral-700 focus:outline-none focus:ring-2 focus:ring-[#d97706]"
-                        >
-                            <option>Tous les jours</option>
-                            <option>Vendredi</option>
-                            <option>Samedi</option>
-                            <option>Dimanche</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label
-                            class="mb-2 block text-sm font-medium text-neutral-700"
-                        >
-                            Genre
-                        </label>
-                        <select
-                            class="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-neutral-700 focus:outline-none focus:ring-2 focus:ring-[#d97706]"
-                        >
-                            <option>Tous les genres</option>
-                            <option>Jazz</option>
-                            <option>Fanfare</option>
-                            <option>Musique de rue</option>
-                            <option>Jazz / Soul</option>
-                        </select>
-                    </div>
-
-                    <a
-                        href="#"
-                        class="inline-flex items-center justify-center rounded-full bg-[#d97706] px-6 py-3 font-semibold text-white shadow transition hover:bg-[#c76a05]"
-                    >
-                        Télécharger le programme PDF
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="max-w-6xl mx-auto px-6 pb-16">
-            <div class="grid gap-8 lg:grid-cols-3">
-                <div
-                    class="rounded-2xl bg-white p-6 shadow-sm border border-neutral-200"
-                >
-                    <div class="mb-6 border-b border-neutral-200 pb-4">
-                        <p
-                            class="text-sm font-medium uppercase tracking-wide text-[#d97706]"
-                        >
-                            Vendredi
-                        </p>
-                        <h2 class="text-3xl font-bold">27 juin 2025</h2>
-                    </div>
-
-                    <div class="space-y-5">
-                        <div class="rounded-xl bg-[#f6f4ef] p-5">
-                            <div
-                                class="mb-2 flex items-center justify-between gap-4"
-                            >
-                                <p class="text-sm font-semibold text-[#d97706]">
-                                    17:00
-                                </p>
-                                <span
-                                    class="rounded-full bg-[#f4d08f] px-3 py-1 text-xs font-medium text-neutral-900"
-                                >
-                                    Fanfare
-                                </span>
-                            </div>
-                            <h3 class="text-xl font-bold">
-                                Les Cuivres de la Comtoise
-                            </h3>
-                            <p class="mt-2 text-sm text-neutral-600">
-                                Scène des Halles
-                            </p>
-                        </div>
-
-                        <div class="rounded-xl bg-[#f6f4ef] p-5">
-                            <div
-                                class="mb-2 flex items-center justify-between gap-4"
-                            >
-                                <p class="text-sm font-semibold text-[#d97706]">
-                                    20:00
-                                </p>
-                                <span
-                                    class="rounded-full bg-[#c6d68b] px-3 py-1 text-xs font-medium text-neutral-900"
-                                >
-                                    Jazz
-                                </span>
-                            </div>
-                            <h3 class="text-xl font-bold">Lazy Birds</h3>
-                            <p class="mt-2 text-sm text-neutral-600">
-                                Place Saint-Martin
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    class="rounded-2xl bg-white p-6 shadow-sm border border-neutral-200"
-                >
-                    <div class="mb-6 border-b border-neutral-200 pb-4">
-                        <p
-                            class="text-sm font-medium uppercase tracking-wide text-[#d97706]"
-                        >
-                            Samedi
-                        </p>
-                        <h2 class="text-3xl font-bold">28 juin 2025</h2>
-                    </div>
-
-                    <div class="space-y-5">
-                        <div class="rounded-xl bg-[#f6f4ef] p-5">
-                            <div
-                                class="mb-2 flex items-center justify-between gap-4"
-                            >
-                                <p class="text-sm font-semibold text-[#d97706]">
-                                    16:00
-                                </p>
-                                <span
-                                    class="rounded-full bg-[#f4d08f] px-3 py-1 text-xs font-medium text-neutral-900"
-                                >
-                                    Musique de rue
-                                </span>
-                            </div>
-                            <h3 class="text-xl font-bold">What She Says</h3>
-                            <p class="mt-2 text-sm text-neutral-600">
-                                Place Saint-Martin
-                            </p>
-                        </div>
-
-                        <div class="rounded-xl bg-[#f6f4ef] p-5">
-                            <div
-                                class="mb-2 flex items-center justify-between gap-4"
-                            >
-                                <p class="text-sm font-semibold text-[#d97706]">
-                                    18:30
-                                </p>
-                                <span
-                                    class="rounded-full bg-[#f4d08f] px-3 py-1 text-xs font-medium text-neutral-900"
-                                >
-                                    Fanfare
-                                </span>
-                            </div>
-                            <h3 class="text-xl font-bold">FMR Orchestra</h3>
-                            <p class="mt-2 text-sm text-neutral-600">
-                                Scène des Halles
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    class="rounded-2xl bg-white p-6 shadow-sm border border-neutral-200"
-                >
-                    <div class="mb-6 border-b border-neutral-200 pb-4">
-                        <p
-                            class="text-sm font-medium uppercase tracking-wide text-[#d97706]"
-                        >
-                            Dimanche
-                        </p>
-                        <h2 class="text-3xl font-bold">29 juin 2025</h2>
-                    </div>
-
-                    <div class="space-y-5">
-                        <div class="rounded-xl bg-[#f6f4ef] p-5">
-                            <div
-                                class="mb-2 flex items-center justify-between gap-4"
-                            >
-                                <p class="text-sm font-semibold text-[#d97706]">
-                                    15:00
-                                </p>
-                                <span
-                                    class="rounded-full bg-[#c6d68b] px-3 py-1 text-xs font-medium text-neutral-900"
-                                >
-                                    Jazz
-                                </span>
-                            </div>
-                            <h3 class="text-xl font-bold">
-                                Le Collectif Jazz 25
-                            </h3>
-                            <p class="mt-2 text-sm text-neutral-600">
-                                Scène du Parc
-                            </p>
-                        </div>
-
-                        <div class="rounded-xl bg-[#f6f4ef] p-5">
-                            <div
-                                class="mb-2 flex items-center justify-between gap-4"
-                            >
-                                <p class="text-sm font-semibold text-[#d97706]">
-                                    21:00
-                                </p>
-                                <span
-                                    class="rounded-full bg-[#c6d68b] px-3 py-1 text-xs font-medium text-neutral-900"
-                                >
-                                    Jazz / Soul
-                                </span>
-                            </div>
-                            <h3 class="text-xl font-bold">Black Chicks</h3>
-                            <p class="mt-2 text-sm text-neutral-600">
-                                Place Saint-Martin
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="bg-white py-16">
-            <div class="max-w-6xl mx-auto px-6">
-                <h2 class="mb-10 text-center text-3xl font-bold">
-                    Informations pratiques
-                </h2>
-
-                <div class="grid gap-6 lg:grid-cols-3">
-                    <div
-                        class="rounded-2xl border border-neutral-200 bg-[#f6f4ef] p-6 text-center"
-                    >
-                        <h3 class="mb-3 text-xl font-bold text-[#d97706]">
-                            Entrée gratuite
-                        </h3>
-                        <p class="text-neutral-600">
-                            Tous les concerts sont en accès libre
-                        </p>
-                    </div>
-
-                    <div
-                        class="rounded-2xl border border-neutral-200 bg-[#f6f4ef] p-6 text-center"
-                    >
-                        <h3 class="mb-3 text-xl font-bold text-[#d97706]">
-                            Restauration
-                        </h3>
-                        <p class="text-neutral-600">
-                            Stands locaux et bio sur place
-                        </p>
-                    </div>
-
-                    <div
-                        class="rounded-2xl border border-neutral-200 bg-[#f6f4ef] p-6 text-center"
-                    >
-                        <h3 class="mb-3 text-xl font-bold text-[#d97706]">
-                            Accessibilité
-                        </h3>
-                        <p class="text-neutral-600">
-                            Toutes les scènes sont accessibles PMR
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="bg-[#d97706] px-6 py-16 text-center text-white">
-            <h2 class="mb-4 text-3xl font-bold">
-                Préparez votre week-end musical
-            </h2>
-
-            <p class="mx-auto mb-8 max-w-2xl text-white/90">
-                Retrouvez les concerts, les horaires et toutes les informations
-                utiles pour profiter pleinement des trois jours de festival.
+            <p class="max-w-xl mx-auto text-lg text-white/90">
+                Découvrez tous les concerts du festival.
             </p>
+        </section>
 
+        <section class="max-w-6xl mx-auto px-6 py-10">
+            <div class="grid md:grid-cols-3 gap-4">
+                <select id="genreFilter" class="border rounded-lg px-4 py-2">
+                    <option value="">Tous les genres</option>
+
+                    {
+                        genres.map((genre) => (
+                            <option value={genre}>{genre}</option>
+                        ))
+                    }
+                </select>
+
+                <select id="sceneFilter" class="border rounded-lg px-4 py-2">
+                    <option value="">Toutes les scènes</option>
+
+                    {
+                        scenes.map((scene) => (
+                            <option value={scene}>{scene}</option>
+                        ))
+                    }
+                </select>
+
+                <select id="dateFilter" class="border rounded-lg px-4 py-2">
+                    <option value="">Toutes les dates</option>
+
+                    {
+                        [
+                            ...new Set(
+                                artistes.map((a) => a.date.split(" ")[0]),
+                            ),
+                        ].map((date) => <option value={date}>{date}</option>)
+                    }
+                </select>
+            </div>
+        </section>
+
+        <section class="max-w-6xl mx-auto px-6 pb-20">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {
+                    artistes.map((artiste) => (
+                        <div
+                            class="artist-card"
+                            data-genre={artiste.genre}
+                            data-scene={artiste.expand?.scene?.nom}
+                            data-date={artiste.date.split(" ")[0]}
+                        >
+                            <ArtistCard artiste={artiste} />
+                        </div>
+                    ))
+                }
+            </div>
+        </section>
+
+        <section class="bg-orange-400 px-6 py-14 text-center text-white">
+            <h2 class="mb-4 text-3xl font-bold">Préparez votre venue</h2>
+
+            <p class="mx-auto mb-8 max-w-xl text-sm">
+                Téléchargez le programme complet et consultez toutes les
+                informations pratiques pour profiter pleinement du festival.
+            </p>
             <div
                 class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
             >
                 <a
-                    href="#"
+                    href="/programme.pdf"
+                    download
                     class="rounded-full bg-white px-8 py-3 font-semibold text-black shadow"
                 >
                     Télécharger le programme
-                </a>
-
-                <a
-                    href="/infos"
-                    class="rounded-full border border-white px-8 py-3 font-semibold text-white"
-                >
-                    Infos pratiques
                 </a>
             </div>
         </section>
     </main>
 </Layout>
+
+<script>
+    const genreFilter = document.getElementById("genreFilter");
+    const sceneFilter = document.getElementById("sceneFilter");
+    const dateFilter = document.getElementById("dateFilter");
+
+    const cards = document.querySelectorAll(".artist-card");
+
+    function filterArtists() {
+        const genre = genreFilter.value;
+        const scene = sceneFilter.value;
+        const date = dateFilter.value;
+
+        cards.forEach((card) => {
+            const cardGenre = card.dataset.genre;
+            const cardScene = card.dataset.scene;
+            const cardDate = card.dataset.date;
+
+            let visible = true;
+
+            if (genre && cardGenre !== genre) visible = false;
+            if (scene && cardScene !== scene) visible = false;
+            if (date && cardDate !== date) visible = false;
+
+            card.style.display = visible ? "block" : "none";
+        });
+    }
+
+    genreFilter.addEventListener("change", filterArtists);
+    sceneFilter.addEventListener("change", filterArtists);
+    dateFilter.addEventListener("change", filterArtists);
+</script>

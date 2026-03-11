@@ -4,13 +4,13 @@ import Hero from "../components/Hero.astro";
 import Date from "../assets/icons/date-orange.svg";
 import DateWhite from "../assets/icons/date-blanc.svg";
 import Location from "../assets/icons/position.svg";
-import Feuille from "../assets/icons/feuille.svg";
 import Gratuit from "../assets/icons/gratuit.svg";
 import Ticket from "../assets/icons/ticket.svg";
 import Carrousel from "../components/Carrousel.astro";
+const title = "Accueil - Festival de Jazz de Montbéliard";
 ---
 
-<Layout>
+<Layout title={title}>
     <main class="bg-neutral-50 text-neutral-900">
         <section class="relative h-[90vh] min-h-150 w-full overflow-hidden">
             <Hero />
@@ -46,7 +46,7 @@ import Carrousel from "../components/Carrousel.astro";
                 </div>
                 <div class="flex flex-col items-center gap-4">
                     <a
-                        href="#"
+                        href="/Programme"
                         class="flex items-center gap-2 rounded-full bg-orange-400 px-8 py-4 text-lg font-medium text-white shadow-lg transition hover:bg-orange-500"
                     >
                         <DateWhite class="w-5 h-5" />
@@ -79,7 +79,6 @@ import Carrousel from "../components/Carrousel.astro";
                     class="rounded-xl bg-white p-6 shadow-sm transition hover:shadow-md"
                 >
                     <div class="mb-2 flex items-center gap-2">
-                        <svg class="h-5 w-5"></svg>
                         <h3 class="font-semibold">6 Artistes</h3>
                     </div>
                     <p class="text-sm text-gray-500">
@@ -90,7 +89,6 @@ import Carrousel from "../components/Carrousel.astro";
                     class="rounded-xl bg-white p-6 shadow-sm transition hover:shadow-md"
                 >
                     <div class="mb-2 flex items-center gap-2">
-                        <Feuille class="h-5 w-5" />
                         <h3 class="font-semibold">100% Éco</h3>
                     </div>
                     <p class="text-sm text-gray-500">
@@ -101,7 +99,6 @@ import Carrousel from "../components/Carrousel.astro";
                     class="rounded-xl bg-white p-6 shadow-sm transition hover:shadow-md"
                 >
                     <div class="mb-2 flex items-center gap-2">
-                        <svg class="h-5 w-5"></svg>
                         <h3 class="font-semibold">Gratuit</h3>
                     </div>
                     <p class="text-sm text-gray-500">
@@ -112,7 +109,6 @@ import Carrousel from "../components/Carrousel.astro";
                     class="rounded-xl bg-white p-6 shadow-sm transition hover:shadow-md"
                 >
                     <div class="mb-2 flex items-center gap-2">
-                        <svg class="h-5 w-5"></svg>
                         <h3 class="font-semibold">3 Scènes</h3>
                     </div>
                     <p class="text-sm text-gray-500">
@@ -126,55 +122,80 @@ import Carrousel from "../components/Carrousel.astro";
                 Découvrez le festival
             </h2>
             <div
-                class="mx-auto max-w-3xl space-y-4 lg:max-w-6xl lg:grid lg:grid-cols-3 lg:gap-6 lg:space-y-0"
+                class="mx-auto max-w-4xl grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
             >
                 <a
-                    class="group flex items-center justify-between rounded-xl bg-white p-6 shadow-sm transition hover:shadow-md"
+                    href="/programme"
+                    class="group relative flex flex-col justify-between rounded-2xl bg-white p-6 shadow-sm border border-neutral-200 hover:shadow-lg hover:-translate-y-1 transition"
                 >
                     <div class="flex items-start gap-4">
-                        <svg class="mt-1 h-6 w-6"></svg>
                         <div>
-                            <h3 class="font-semibold">Programme</h3>
-                            <p class="text-sm text-gray-500">
+                            <h3 class="font-semibold text-lg">Programme</h3>
+
+                            <p class="text-sm text-neutral-500">
                                 Tous les concerts et horaires
                             </p>
                         </div>
                     </div>
-                    <span class="text-xl transition group-hover:translate-x-1"
-                        >→</span
+
+                    <span
+                        class="mt-6 text-orange-500 font-semibold flex items-center gap-2"
                     >
+                        Découvrir
+                        <span class="transition group-hover:translate-x-1"
+                            >→</span
+                        >
+                    </span>
                 </a>
+
                 <a
-                    class="group flex items-center justify-between rounded-xl bg-white p-6 shadow-sm transition hover:shadow-md"
+                    href="/artistes"
+                    class="group relative flex flex-col justify-between rounded-2xl bg-white p-6 shadow-sm border border-neutral-200 hover:shadow-lg hover:-translate-y-1 transition"
                 >
                     <div class="flex items-start gap-4">
-                        <svg class="mt-1 h-6 w-6"></svg>
                         <div>
-                            <h3 class="font-semibold">Artistes</h3>
-                            <p class="text-sm text-gray-500">
+                            <h3 class="font-semibold text-lg">Artistes</h3>
+
+                            <p class="text-sm text-neutral-500">
                                 Les artistes invités du festival
                             </p>
                         </div>
                     </div>
-                    <span class="text-xl transition group-hover:translate-x-1"
-                        >→</span
+
+                    <span
+                        class="mt-6 text-orange-500 font-semibold flex items-center gap-2"
                     >
+                        Voir les artistes
+                        <span class="transition group-hover:translate-x-1"
+                            >→</span
+                        >
+                    </span>
                 </a>
+
                 <a
-                    class="group flex items-center justify-between rounded-xl bg-white p-6 shadow-sm transition hover:shadow-md"
+                    href="/infos"
+                    class="group relative flex flex-col justify-between rounded-2xl bg-white p-6 shadow-sm border border-neutral-200 hover:shadow-lg hover:-translate-y-1 transition"
                 >
                     <div class="flex items-start gap-4">
-                        <svg class="mt-1 h-6 w-6"></svg>
                         <div>
-                            <h3 class="font-semibold">Infos pratiques</h3>
-                            <p class="text-sm text-gray-500">
+                            <h3 class="font-semibold text-lg">
+                                Infos pratiques
+                            </h3>
+
+                            <p class="text-sm text-neutral-500">
                                 Accès, transports et hébergement
                             </p>
                         </div>
                     </div>
-                    <span class="text-xl transition group-hover:translate-x-1"
-                        >→</span
+
+                    <span
+                        class="mt-6 text-orange-500 font-semibold flex items-center gap-2"
                     >
+                        Préparer ma venue
+                        <span class="transition group-hover:translate-x-1"
+                            >→</span
+                        >
+                    </span>
                 </a>
             </div>
         </section>
@@ -191,12 +212,17 @@ import Carrousel from "../components/Carrousel.astro";
             class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
         >
             <a
+                href="/programme.pdf"
+                download
                 class="rounded-full bg-white px-8 py-3 font-semibold text-black shadow"
             >
                 Télécharger le programme
             </a>
 
-            <a class="rounded-full border border-white px-8 py-3 font-semibold">
+            <a
+                href="/Contact"
+                class="rounded-full border border-white px-8 py-3 font-semibold"
+            >
                 Nous contacter
             </a>
         </div>

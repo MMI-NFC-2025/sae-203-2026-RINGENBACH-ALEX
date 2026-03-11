@@ -2,13 +2,14 @@
 import Layout from "../../layouts/Layout.astro";
 import { allScenesSorted } from "../../../backend/backend.mjs";
 import SceneCard from "../../components/SceneCard.astro";
+const title = "Les scènes - Festival de Jazz de Montbéliard";
 
 const scenes = await allScenesSorted();
 ---
 
-<Layout>
+<Layout title={title}>
     <main class="bg-[#f6f4ef] text-neutral-900">
-        <section class="bg-[#d97706] text-white py-20 text-center px-6">
+        <section class="bg-orange-500 text-white py-20 text-center px-6">
             <h1 class="text-4xl font-bold mb-4">Les scènes</h1>
 
             <p class="max-w-xl mx-auto text-lg text-white/90">

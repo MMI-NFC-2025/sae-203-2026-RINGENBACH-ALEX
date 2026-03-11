@@ -1,10 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const title = "Infos Pratiques - Festival de Jazz de Montbéliard";
 ---
 
-<Layout>
+<Layout title={title}>
     <main class="bg-[#f6f4ef] text-neutral-900">
-        <section class="bg-[#d97706] text-white py-20 text-center px-6">
+        <section class="bg-orange-500 text-white py-20 text-center px-6">
             <h1 class="text-4xl font-bold mb-4 lg:text-5xl">Infos Pratiques</h1>
             <p class="max-w-xl mx-auto text-lg text-white/90">
                 Tout ce qu'il faut savoir pour profiter pleinement du festival
@@ -16,7 +18,7 @@ import Layout from "../layouts/Layout.astro";
                 <div
                     class="bg-white rounded-xl shadow-sm border border-neutral-200 p-8 text-center flex flex-col justify-center"
                 >
-                    <p class="text-2xl font-semibold text-[#d97706] mb-3">
+                    <p class="text-2xl font-semibold text-orange-500 mb-3">
                         Festival 100% Gratuit !
                     </p>
                     <p class="text-neutral-600">
@@ -25,7 +27,7 @@ import Layout from "../layouts/Layout.astro";
                     </p>
                 </div>
                 <div class="bg-white rounded-xl p-6 border border-neutral-200">
-                    <h3 class="font-semibold text-[#d97706] mb-3">
+                    <h3 class="font-semibold text-orange-500 mb-3">
                         Restauration & Boissons
                     </h3>
                     <ul class="space-y-2 text-neutral-600">
@@ -42,7 +44,7 @@ import Layout from "../layouts/Layout.astro";
                 <h2 class="text-3xl font-bold mb-8">Hébergements</h2>
                 <div class="grid md:grid-cols-2 gap-8 lg:gap-10">
                     <div class="bg-[#f6f4ef] p-6 rounded-xl">
-                        <h3 class="font-semibold mb-4 text-[#d97706]">
+                        <h3 class="font-semibold mb-4 text-orange-500">
                             Hôtels
                         </h3>
                         <ul class="space-y-3 text-neutral-700">
@@ -64,7 +66,7 @@ import Layout from "../layouts/Layout.astro";
                         </ul>
                     </div>
                     <div class="bg-[#f6f4ef] p-6 rounded-xl">
-                        <h3 class="font-semibold mb-4 text-[#d97706]">
+                        <h3 class="font-semibold mb-4 text-orange-500">
                             Campings
                         </h3>
                         <ul class="space-y-3 text-neutral-700">
@@ -91,7 +93,7 @@ import Layout from "../layouts/Layout.astro";
             <h2 class="text-3xl font-bold mb-8">Accès & Transport</h2>
             <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
                 <div class="bg-white p-6 rounded-xl border border-neutral-200">
-                    <h3 class="font-semibold text-[#d97706] mb-3">En train</h3>
+                    <h3 class="font-semibold text-orange-500 mb-3">En train</h3>
                     <p class="text-neutral-600 text-sm">
                         Gare de Montbéliard à 15 min à pied du centre-ville.
                     </p>
@@ -102,7 +104,7 @@ import Layout from "../layouts/Layout.astro";
                     </ul>
                 </div>
                 <div class="bg-white p-6 rounded-xl border border-neutral-200">
-                    <h3 class="font-semibold text-[#d97706] mb-3">
+                    <h3 class="font-semibold text-orange-500 mb-3">
                         En voiture
                     </h3>
                     <p class="text-neutral-600 text-sm">
@@ -115,7 +117,7 @@ import Layout from "../layouts/Layout.astro";
                     </ul>
                 </div>
                 <div class="bg-white p-6 rounded-xl border border-neutral-200">
-                    <h3 class="font-semibold text-[#d97706] mb-3">
+                    <h3 class="font-semibold text-orange-500 mb-3">
                         Transports doux
                     </h3>
                     <ul class="text-sm text-neutral-600 space-y-2">
@@ -126,7 +128,7 @@ import Layout from "../layouts/Layout.astro";
                 </div>
             </div>
         </section>
-        <section class="bg-[#ebe6da] py-16 px-6">
+        <section class="bg-beige-200 py-16 px-6">
             <div class="max-w-4xl mx-auto lg:max-w-6xl">
                 <h2 class="text-3xl font-bold text-center mb-10">
                     Questions fréquentes
@@ -219,7 +221,7 @@ import Layout from "../layouts/Layout.astro";
                 </div>
             </div>
         </section>
-        <section class="bg-[#d97706] text-white py-16 text-center px-6">
+        <section class="bg-orange-500 text-white py-16 text-center px-6">
             <h2 class="text-3xl font-bold mb-4">Une question ?</h2>
             <p class="mb-6">
                 Vous ne trouvez pas la réponse à votre question ? N'hésitez pas

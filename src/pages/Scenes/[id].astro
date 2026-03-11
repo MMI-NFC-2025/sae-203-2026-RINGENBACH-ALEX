@@ -13,11 +13,12 @@ const scene = await oneSceneById(id);
 const artistes = await artistesBySceneId(id);
 
 const photo = scene.photo ? getFileUrl(scene, scene.photo) : null;
+const title = "Les scènes - Festival de Jazz de Montbéliard";
 ---
 
-<Layout>
+<Layout title={title}>
     <main class="bg-[#f6f4ef] text-neutral-900">
-        <section class="bg-[#d97706] text-white py-20 text-center px-6">
+        <section class="bg-orange-500 text-white py-20 text-center px-6">
             <h1 class="text-4xl font-bold mb-4">
                 {scene.nom}
             </h1>
@@ -29,7 +30,7 @@ const photo = scene.photo ? getFileUrl(scene, scene.photo) : null;
         <div class="max-w-6xl mx-auto px-6 pt-10">
             <a
                 href="/Scenes"
-                class="inline-flex items-center gap-2 text-sm text-neutral-700 hover:text-[#d97706] transition"
+                class="inline-flex items-center gap-2 text-sm text-neutral-700 hover:text-orange-500 transition"
             >
                 ← Retour aux scènes
             </a>

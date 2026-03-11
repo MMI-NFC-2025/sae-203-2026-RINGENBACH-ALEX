@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import PbImage from "../../components/PbImage.astro";
 import { oneArtisteById, getFileUrl } from "../../../backend/backend.mjs";
+const title = "Artiste - Festival de Jazz de Montbéliard";
 
 const { id } = Astro.params;
 
@@ -10,9 +11,9 @@ const artiste = await oneArtisteById(id);
 const galerie = artiste.galerie || [];
 ---
 
-<Layout>
+<Layout title={title}>
     <main class="bg-[#f6f4ef] text-neutral-900">
-        <section class="bg-[#d97706] text-white py-20 text-center px-6">
+        <section class="bg-orange-500 text-white py-20 text-center px-6">
             <h1 class="text-4xl font-bold">
                 {
                     artiste.prenom
@@ -24,7 +25,7 @@ const galerie = artiste.galerie || [];
         <div class="max-w-6xl mx-auto px-6 pt-10">
             <button
                 onclick="history.back()"
-                class="flex items-center gap-2 text-sm text-neutral-700 hover:text-[#d97706] transition"
+                class="flex items-center gap-2 text-sm text-neutral-700 hover:text-orange-500 transition"
             >
                 ← Retour
             </button>
