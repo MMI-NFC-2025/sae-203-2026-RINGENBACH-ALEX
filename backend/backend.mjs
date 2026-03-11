@@ -1,5 +1,5 @@
 import PocketBase from "pocketbase";
-const pb = new PocketBase("https://sae203.alex-ringenbach.fr");
+const pb = new PocketBase("https://sae203.alex-ringenbach.fr:443");
 
 export function getImageUrl(record, field) {
     if (!record || !record[field]) {
