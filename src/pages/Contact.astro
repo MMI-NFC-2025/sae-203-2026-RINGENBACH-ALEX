@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
 import Facebook from "../assets/icons/facebook.svg";
 import Instagram from "../assets/icons/instagram.svg";
 const title = "Contact - Festival de Jazz de Montbéliard";
@@ -76,13 +77,21 @@ const title = "Contact - Festival de Jazz de Montbéliard";
                         <a
                             class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow"
                         >
-                            <Facebook class="w-5 h-5" />
+                            <Image
+                                src={Facebook}
+                                alt="Facebook"
+                                class="w-5 h-5"
+                            />
                         </a>
 
                         <a
                             class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow"
                         >
-                            <Instagram class="w-5 h-5" />
+                            <Image
+                                src={Instagram}
+                                alt="Instagram"
+                                class="w-5 h-5"
+                            />
                         </a>
                     </div>
                 </div>

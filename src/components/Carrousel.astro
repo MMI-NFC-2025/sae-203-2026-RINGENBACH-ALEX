@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Moloco from "../assets/icons/moloco.svg";
 import Montbeliard from "../assets/icons/Montbeliard.svg";
 import PMontbeliard from "../assets/icons/Pays_de_Montbeliard.svg";
@@ -16,43 +17,55 @@ import Comte from "../assets/icons/comte.svg";
             <div
                 class="flex items-center justify-center w-40 h-20 bg-white rounded-lg shadow"
             >
-                <Moloco class="h-10 w-auto" />
+                <Image src={Moloco} alt="Moloco" class="h-10 w-auto" />
             </div>
 
             <div
                 class="flex items-center justify-center w-40 h-20 bg-white rounded-lg shadow"
             >
-                <Montbeliard class="h-10 w-auto" />
+                <Image
+                    src={Montbeliard}
+                    alt="Montbéliard"
+                    class="h-10 w-auto"
+                />
             </div>
 
             <div
                 class="flex items-center justify-center w-40 h-20 bg-white rounded-lg shadow"
             >
-                <PMontbeliard class="h-10 w-auto" />
+                <Image
+                    src={PMontbeliard}
+                    alt="Pays de Montbéliard"
+                    class="h-10 w-auto"
+                />
             </div>
 
             <div
                 class="flex items-center justify-center w-40 h-20 bg-white rounded-lg shadow"
             >
-                <Airbnb class="h-10 w-auto" />
+                <Image src={Airbnb} alt="Airbnb" class="h-10 w-auto" />
             </div>
 
             <div
                 class="flex items-center justify-center w-40 h-20 bg-white rounded-lg shadow"
             >
-                <CA class="h-10 w-auto" />
+                <Image src={CA} alt="Crédit Agricole" class="h-10 w-auto" />
             </div>
 
             <div
                 class="flex items-center justify-center w-40 h-20 bg-white rounded-lg shadow"
             >
-                <Doubs class="h-10 w-auto" />
+                <Image src={Doubs} alt="Doubs" class="h-10 w-auto" />
             </div>
 
             <div
                 class="flex items-center justify-center w-40 h-20 bg-white rounded-lg shadow"
             >
-                <Comte class="h-10 w-auto" />
+                <Image
+                    src={Comte}
+                    alt="Bourgogne-Franche-Comté"
+                    class="h-10 w-auto"
+                />
             </div>
         </div>
     </div>

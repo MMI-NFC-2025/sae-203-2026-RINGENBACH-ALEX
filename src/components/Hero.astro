@@ -1,11 +1,12 @@
 ---
+import { Image } from "astro:assets";
 import HeroImage from "../assets/img/hero-du-site.avif";
 ---
 
 <div class="absolute inset-0">
-    <img
-        src={HeroImage.src}
+    <Image
+        src={HeroImage}
         alt="Festival La Fanfà'Comtoise"
-        class="h-full w-full object-cover"
+        class="absolute inset-0 w-full h-full object-cover"
     />
 </div>

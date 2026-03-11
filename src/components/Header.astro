@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Logo from "../assets/icons/logo-du-site.svg";
 ---
 
@@ -8,20 +9,26 @@ import Logo from "../assets/icons/logo-du-site.svg";
     >
         <div>
             <a href="/" aria-label="Accueil">
-                <Logo class="h-17 w-auto" />
+                <Image src={Logo} alt="Logo du festival" class="h-17 w-auto" />
             </a>
         </div>
 
         <nav class="hidden lg:block">
             <ul class="flex items-center gap-8 text-sm font-medium">
                 <li>
-                    <a href="/Festival" class="hover:text-[#d97706] transition">
+                    <a
+                        href="/Festival"
+                        class="hover:text-orange-500 transition"
+                    >
                         Le Festival
                     </a>
                 </li>
 
                 <li>
-                    <a href="/Artistes" class="hover:text-[#d97706] transition">
+                    <a
+                        href="/Artistes"
+                        class="hover:text-orange-500 transition"
+                    >
                         Artistes
                     </a>
                 </li>
@@ -29,26 +36,26 @@ import Logo from "../assets/icons/logo-du-site.svg";
                 <li>
                     <a
                         href="/Programme"
-                        class="hover:text-[#d97706] transition"
+                        class="hover:text-orange-500 transition"
                     >
                         Programme
                     </a>
                 </li>
 
                 <li>
-                    <a href="/Scenes" class="hover:text-[#d97706] transition">
+                    <a href="/Scenes" class="hover:text-orange-500 transition">
                         Scènes
                     </a>
                 </li>
 
                 <li>
-                    <a href="/Infos" class="hover:text-[#d97706] transition">
+                    <a href="/Infos" class="hover:text-orange-500 transition">
                         Infos pratiques
                     </a>
                 </li>
 
                 <li>
-                    <a href="/Contact" class="hover:text-[#d97706] transition">
+                    <a href="/Contact" class="hover:text-orange-500 transition">
                         Contact
                     </a>
                 </li>
@@ -56,7 +63,7 @@ import Logo from "../assets/icons/logo-du-site.svg";
                 <li>
                     <a
                         href="/Connexion"
-                        class="hover:text-[#d97706] transition"
+                        class="hover:text-orange-500 transition"
                     >
                         Inscription/Connexion
                     </a>
