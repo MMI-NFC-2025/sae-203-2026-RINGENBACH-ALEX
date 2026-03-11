@@ -1,19 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import FestivalHero from "../assets/img/Lazy-birds.avif";
+import { Image } from "astro:assets";
 const title = "Le Festival - Festival de Jazz de Montbéliard";
+import heroBannerImg from "../assets/img/lazy-birds.avif";
 ---
 
 <Layout title={title}>
     <main class="bg-neutral-50 text-neutral-900">
         <section class="relative h-[70vh] min-h-125 overflow-hidden">
-            <div class="absolute inset-0">
-                <img
-                    src={FestivalHero.src}
-                    alt="Festival"
-                    class="h-full w-full object-cover"
-                />
-            </div>
+            <Image
+                src={heroBannerImg}
+                alt="Peinture baroque représentant des musiciens"
+                class="absolute inset-0 w-full h-full object-cover"
+            />
 
             <div class="absolute inset-0 bg-black/40"></div>
 
