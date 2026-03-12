@@ -89,29 +89,6 @@ export async function artistesBySceneName(sceneName) {
 }
 
 
-export async function addOrUpdateArtiste(data, id = null) {
-
-    if (id) {
-        return await pb.collection("artiste").update(id, data);
-    }
-
-    return await pb.collection("artiste").create(data);
-}
-
-
-export async function addOrUpdateScene(data, id = null) {
-
-    if (id) {
-        return await pb.collection("scene").update(id, data);
-    }
-
-    return await pb.collection("scene").create(data);
-}
-export async function addArtiste(data) {
-    const record = await pb.collection("artiste").create(data);
-    return record;
-}
-
 
 export async function updateArtiste(id, data) {
     const record = await pb.collection("artiste").update(id, data);
